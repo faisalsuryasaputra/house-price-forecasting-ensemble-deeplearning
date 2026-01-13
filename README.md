@@ -1,66 +1,59 @@
-# 🏠 House Price Prediction: Advanced Regression & Deep Learning
+# 🏠 ProdigiEstate: House Price Prediction App
 
-Proyek ini merupakan solusi *end-to-end* untuk kompetisi Kaggle [House Prices: Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques). Tujuan utamanya adalah memprediksi harga jual rumah berdasarkan berbagai fitur properti menggunakan teknik *Machine Learning* klasik dan *Deep Learning*.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://handsondigistarda.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0%2B-orange)](https://www.tensorflow.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-v1.0-yellow)](https://scikit-learn.org/)
 
-## 📌 Gambaran Proyek
+> **🔴 LIVE DEMO:** [Click here to try ProdigiEstate](https://handsondigistarda.streamlit.app/)
 
-Notebook ini mencakup seluruh *pipeline* data science, mulai dari pembersihan data mentah hingga evaluasi model. Analisis ini membandingkan kinerja model linear sederhana, regularisasi (Lasso/Ridge), *ensemble tree*, hingga Jaringan Syaraf Tiruan (ANN).
+## 📌 Project Overview
+**ProdigiEstate** is an interactive web application designed to predict housing prices (Property Valuation) based on physical building features. This project represents an **End-to-End Data Science** implementation, covering everything from *Exploratory Data Analysis* (EDA) and *Data Preprocessing* to modeling using **Deep Learning (ANN)** & **Ensemble Methods**, and finally deploying to the web.
 
-### Fitur Utama:
-* **Exploratory Data Analysis (EDA):** Analisis distribusi target (`SalePrice`), korelasi fitur, dan visualisasi *missing values*.
-* **Data Preprocessing:**
-    * Penanganan *missing values* (drop kolom dengan rasio null tinggi & drop baris).
-    * Pembersihan data string (parsing kolom `LotArea`).
-    * *Encoding* variabel kategorikal menggunakan `LabelEncoder`.
-* **Model Building:** Implementasi berbagai algoritma regresi.
-* **Evaluasi Metrik:** Menggunakan RMSE, R2 Score, MAE, dan MAPE.
+The application features a user-friendly interface customized with the **Telkom University (School of Computing)** color theme.
 
-## 🛠️ Teknologi yang Digunakan
+## ✨ Key Features
+* **Real-time Prediction:** Instant house price estimation using trained Machine Learning models.
+* **Custom UI Theme:** Modern interface designed with Telkom University's signature colors (Maroon, Yellow, White).
+* **Advanced Modeling:** Utilizes a combination of advanced regression techniques and Artificial Neural Networks.
+* **Interactive Input:** Users can input specific parameters such as Lot Area, Living Area, Overall Quality, and Neighborhood location.
 
-* **Python**
-* **Data Manipulation:** Pandas, NumPy
-* **Visualization:** Matplotlib, Seaborn
-* **Machine Learning:** Scikit-Learn (Linear Regression, Lasso, Ridge, Random Forest)
-* **Deep Learning:** Keras / TensorFlow (Sequential API untuk ANN)
+## 🛠️ Tech Stack
+* **Frontend:** [Streamlit](https://streamlit.io/) (Python Web Framework)
+* **Machine Learning:** Scikit-Learn (Random Forest, Lasso, Ridge)
+* **Deep Learning:** TensorFlow / Keras (Artificial Neural Network)
+* **Data Processing:** Pandas, NumPy
+* **Deployment:** Streamlit Community Cloud
 
-## 📊 Model yang Diuji
+## 📊 Model Performance
+This project compares several algorithms to achieve the best prediction accuracy. The models were evaluated based on R2 Score and RMSE:
 
-Notebook ini membandingkan performa dari algoritma berikut:
+| Model | R2 Score | RMSE |
+| :--- | :---: | :---: |
+| **Artificial Neural Network (ANN)** | **0.89** | **Low** |
+| Random Forest Regressor | 0.87 | Low |
+| Linear Regression (Baseline) | 0.84 | High |
 
-1.  **Linear Regression:** Sebagai *baseline* model.
-2.  **Lasso Regression (L1):** Untuk seleksi fitur otomatis dan mengurangi *overfitting*.
-3.  **Ridge Regression (L2):** Menangani multikolinearitas.
-4.  **Random Forest Regressor:** Model *ensemble* berbasis pohon keputusan.
-5.  **Artificial Neural Network (ANN):** Arsitektur *Deep Learning* dengan:
-    * Input Layer menyesuaikan dimensi fitur.
-    * Hidden Layers (1024, 256, 64, 16 units) dengan aktivasi ReLU.
-    * Output Layer (1 unit) untuk regresi.
-    * Optimasi menggunakan Adam dan *Early Stopping*.
+## 🚀 How to Run Locally
+If you want to run this application on your local machine:
 
-## 📈 Hasil Evaluasi (Contoh)
-
-Setiap model dievaluasi menggunakan metrik berikut pada data *test split*:
-
-* **R-squared (R2)**
-* **Mean Squared Error (MSE)**
-* **Root Mean Squared Error (RMSE)**
-* **Mean Absolute Error (MAE)**
-* **Mean Absolute Percentage Error (MAPE)**
-
-> *Catatan: Random Forest dan ANN umumnya memberikan hasil yang lebih baik dalam menangkap pola non-linear pada data harga rumah dibandingkan model linear biasa.*
-
-## 🚀 Cara Menjalankan
-
-1.  Clone repository ini:
+1.  **Clone Repository**
     ```bash
-    git clone [https://github.com/faisalsuryasaputra/nama-repo-kamu.git](https://github.com/faisalsuryasaputra/nama-repo-kamu.git)
+    git clone [https://github.com/faisalsuryasaputra/house-price-forecasting-ensemble-deeplearning.git](https://github.com/faisalsuryasaputra/house-price-forecasting-ensemble-deeplearning.git)
+    cd house-price-forecasting-ensemble-deeplearning
     ```
-2.  Pastikan dataset `train.csv` tersedia di direktori atau sesuaikan *path* di dalam notebook.
-3.  Install library yang dibutuhkan:
+
+2.  **Install Dependencies**
+    Ensure you have Python 3 installed, then run:
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
+    pip install -r requirements.txt
     ```
-4.  Jalankan notebook menggunakan Jupyter atau Google Colab.
+
+3.  **Run Application**
+    ```bash
+    streamlit run app.py
+    ```
 
 ---
-**Author:** [Faisal Surya Saputra](https://github.com/faisalsuryasaputra)
+**Created by:** [Faisal Surya Saputra](https://github.com/faisalsuryasaputra)
+*Informatics Engineering Student at Telkom University*
